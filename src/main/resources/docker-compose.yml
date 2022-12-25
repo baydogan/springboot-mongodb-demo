@@ -1,0 +1,14 @@
+version: "3"
+services:
+  aydoganmongodb:
+    image: mongo:latest
+    container_name: "aydoganmongodb"
+    ports:
+      - 27017:27017
+  springboot-mongo-demo:
+    image: springboot-mongo-demo:1.0
+    container_name: springboot-mongo-demo
+    ports:
+      - 8080:8080
+    links:
+      - aydoganmongodb
