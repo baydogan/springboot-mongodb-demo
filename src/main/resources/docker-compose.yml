@@ -6,7 +6,7 @@ services:
     ports:
       - 27017:27017
   springboot-mongo-demo:
-    image: springboot-mongo-demo:1.0
+    image: springboot-mongo-demo:1.1
     container_name: springboot-mongo-demo
     ports:
       - 8080:8080
