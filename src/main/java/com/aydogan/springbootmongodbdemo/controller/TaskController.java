@@ -46,5 +46,9 @@ public class TaskController {
         return service.deleteTask(taskId);
     }
 
+    @PutMapping
+    public Task updateTask(@RequestBody Task task){
+        return service.updateExistingTask(task);
+    }
 
 }

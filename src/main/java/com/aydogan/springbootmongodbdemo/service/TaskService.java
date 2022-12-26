@@ -41,4 +41,14 @@ public class TaskService {
         repository.deleteById(taskId);
         return taskId + " has been deleted";
     }
+
+    public Task updateExistingTask(Task taskUpdateRequest){
+        Task task = repository.findById(taskUpdateRequest.getTaskId()).get();
+        task.setTaskTitle(taskUpdateRequest.getTaskTitle());
+        task.setTaskDescription(taskUpdateRequest.getTaskDescription());
+        task.setAssignedUser(taskUpdateRequest.getAssignedUser());
+        task.setImportance(taskUpdateRequest.getImportance());
+        task.setLastUpdate(LocalDateTime.now());
+        return repository.save(task);
+    }
 }
